@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to check if a string is numeric
+bool isNumeric(const string& str) {
+    if (str.empty()) return false; // empty string is not numeric
+    for (char c : str) {
+        if (!isdigit(c)) {
+            return false; // if any character is not a digit, return false
+        }
+    }
+    return true; // all characters are digits
+}
+
+int main() {
+    string input;
+    cout << "Enter a string: ";
+    cin >> input;
+
+    if (isNumeric(input)) {
+        cout << "The string is numeric." << endl;
+    } else {
+        cout << "The string is not numeric." << endl;
+    }
+
+    return 0;
+}
